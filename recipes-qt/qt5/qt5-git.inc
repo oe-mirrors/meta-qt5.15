@@ -5,13 +5,14 @@ QT_MODULE ?= "${BPN}"
 QT_MODULE_BRANCH ?= "5.15"
 QT_MODULE_BRANCH_PARAM ?= "branch=${QT_MODULE_BRANCH}"
 
+# for compatibility with Yocto releases before whinlatter
+BB_GIT_DEFAULT_DESTSUFFIX ?= "${BP}"
+
 # each module needs to define valid SRCREV
 SRC_URI = " \
-    ${QT_GIT}/${QT_MODULE}.git;name=${QT_MODULE};${QT_MODULE_BRANCH_PARAM};protocol=${QT_GIT_PROTOCOL} \
+    ${QT_GIT}/${QT_MODULE}.git;name=${QT_MODULE};${QT_MODULE_BRANCH_PARAM};protocol=${QT_GIT_PROTOCOL};destsuffix=${BB_GIT_DEFAULT_DESTSUFFIX} \
 "
 
-CVE_PRODUCT:append = " qt"
-
-S = "${WORKDIR}/git"
+CVE_PRODUCT ?= "qt:${BPN} qt:qt"
 
 PV = "5.15.16+git${SRCPV}"
