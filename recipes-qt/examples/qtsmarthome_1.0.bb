@@ -1,7 +1,7 @@
 SUMMARY = "Qt5 smarthome QML demo application"
 DESCRIPTION = "This is the Smarthome QML demo application. It shows some user interfaces for controlling an automated house"
 HOMEPAGE = "http://www.basyskom.com/news/143-demos-qt5-port.html"
-LICENSE = "GFDL-1.2 AND LGPL-2.1-or-later"
+LICENSE = "GFDL-1.2-or-later AND LGPL-2.1-or-later"
 LIC_FILES_CHKSUM = "file://COPYING.DOC;md5=ad1419ecc56e060eccf8184a87c4285f \
                     file://COPYING.LIB;md5=2d5025d4aa3495befef8f17206a5b0a1"
 
@@ -11,7 +11,7 @@ SRC_URI = "https://artifacts.toradex.com/artifactory/tdxref-oe-prod-frankfurt/du
 SRC_URI[md5sum] = "883b0376239baec20ebec072e938a995"
 SRC_URI[sha256sum] = "fceaa813c33e462bad6c0383eaef81a6f6e586c15d1fa73898173b517fc1cda6"
 
-S = "${WORKDIR}/smarthome_src"
+S = "${UNPACKDIR}/smarthome_src"
 
 require recipes-qt/qt5/qt5.inc
 
